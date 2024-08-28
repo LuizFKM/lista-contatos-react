@@ -1,22 +1,32 @@
+import ContatoCard from '../../components/CardContato'
 import { ListaContainer } from '../../styles'
 
 const ListaDeContatos = () => (
   <ListaContainer>
-    <div>
-      <h3>Luiz Francisco</h3>
-      <h4>999039845</h4>
-      <h4>email: luiz@gmail.com</h4>
-    </div>
-    <div>
-      <h3>Luiz Francisco</h3>
-      <h4>999039845</h4>
-      <h4>email: luiz@gmail.com</h4>
-    </div>
-    <div>
-      <h3>Luiz Francisco</h3>
-      <h4>999039845</h4>
-      <h4>email: luiz@gmail.com</h4>
-    </div>
+    <ContatoCard
+      remover
+      nome="Luiz"
+      numero={9991110}
+      email="email@exemplo.com"
+    />
+    <ContatoCard
+      remover
+      nome="Luiz"
+      numero={9991110}
+      email="email@exemplo.com"
+    />
+    <ContatoCard
+      remover
+      nome="Luiz"
+      numero={9991110}
+      email="email@exemplo.com"
+    />
+    <ContatoCard
+      remover
+      nome="Luiz"
+      numero={9991110}
+      email="email@exemplo.com"
+    />
   </ListaContainer>
 )
 

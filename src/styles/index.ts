@@ -5,7 +5,7 @@ const EstiloGlobal = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif
+  font-family: 'Lato', sans-serif;
 }
 `
 export const Container = styled.div`
@@ -14,10 +14,14 @@ export const Container = styled.div`
 `
 
 export const ListaContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
   padding: 24px;
+  height: 100vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  background-color: #cad3c8;
+  box-sizing: border-box;
 `
 
 export default EstiloGlobal
