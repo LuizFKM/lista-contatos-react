@@ -1,3 +1,5 @@
+import Contato from '../../models/Contatos'
+
 import {
   Card,
   TituloCard,
@@ -7,16 +9,10 @@ import {
   GrupoBotoes
 } from './styles'
 
-export type Props = {
-  remover?: boolean
-  nome: string
-  numero: number
-  email: string
-  id?: number
-}
+export type Props = Contato
 
 const ContatoCard = ({ remover, nome, numero, email }: Props) => (
-  <Card>
+  <Card id={nome}>
     <TituloCard>{nome}</TituloCard>
     <ContentCard>{numero}</ContentCard>
     <Email href="mailto:contato@exemplo.com">{email}</Email>

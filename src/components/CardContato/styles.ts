@@ -10,7 +10,7 @@ export const Card = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   transition: 0.6s ease;
-  max-height: 30%;
+  max-height: 50%;
 
   &:hover {
     transform: translateY(-5px);
