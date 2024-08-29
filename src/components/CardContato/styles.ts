@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { Props } from '.'
+import variaveis from '../../styles/variaveis'
 
 type PropsSemContentCard = Omit<Props, 'nome' | 'email' | 'numero' | 'id'>
 
@@ -75,7 +76,14 @@ export const Botao = styled.button<PropsSemContentCard>`
   font-size: 0.9em;
   color: black;
   font-weight: bold;
-  background-color: ${(props) => (props.remover ? '#ff3f34' : '#EAB543')};
+  background-color: ${variaveis.amarelo};
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease;
+`
+
+export const BotaoRemoverECancelar = styled(Botao)`
+  background-color: ${variaveis.vermelho};
+`
+export const BotaoSalvar = styled(Botao)`
+  background-color: ${variaveis.verde};
 `

@@ -7,30 +7,32 @@ import {
   ContentCard,
   Email,
   Botao,
-  GrupoBotoes
+  GrupoBotoes,
+  BotaoRemoverECancelar,
+  BotaoSalvar
 } from './styles'
 
 export type Props = Contato
 
-const ContatoCard = ({ remover, nome, numero, email, id }: Props) => {
+const ContatoCard = ({ nome, numero, email }: Props) => {
   const [estaEditando, setEstaEditando] = useState(false)
   return (
-    <Card id={id}>
+    <Card>
       <TituloCard>{nome}</TituloCard>
       <ContentCard>{numero}</ContentCard>
       <Email href={`mailto:${email}`}>{email}</Email>
       <GrupoBotoes>
         {estaEditando ? (
           <>
-            <Botao>Salvar</Botao>
-            <Botao remover={remover} onClick={() => setEstaEditando(false)}>
+            <BotaoSalvar>Salvar</BotaoSalvar>
+            <BotaoRemoverECancelar onClick={() => setEstaEditando(false)}>
               Cancelar
-            </Botao>
+            </BotaoRemoverECancelar>
           </>
         ) : (
           <>
             <Botao onClick={() => setEstaEditando(true)}>Editar</Botao>
-            <Botao remover={remover}>Remover</Botao>
+            <BotaoRemoverECancelar>Remover</BotaoRemoverECancelar>
           </>
         )}
       </GrupoBotoes>
