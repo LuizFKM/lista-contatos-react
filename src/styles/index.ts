@@ -18,7 +18,11 @@ export const ListaContainer = styled.div`
   height: 100vh;
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-auto-columns: 300px;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  justify-items: center;
   gap: 24px;
   background-color: #cad3c8;
   box-sizing: border-box;

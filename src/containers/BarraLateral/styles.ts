@@ -15,3 +15,22 @@ export const Campo = styled.input`
   color: #666666;
   width: 100%;
 `
+export const BtnAdicionar = styled.button`
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #55e6c1;
+  font-weight: bold;
+  color: #2c3a47;
+  width: 100%;
+  border: none;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: -1px 6px 4px 0px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    transform: translateY(3px);
+    background-color: #9aecdb;
+    box-shadow: 1px 6px 1px 0px rgba(0, 0, 0, 0.25);
+  }
+`

@@ -2,7 +2,7 @@ class Contato {
   nome: string
   numero: number
   email: string
-  id: string
+  id?: string
   remover?: boolean
 
   constructor(
