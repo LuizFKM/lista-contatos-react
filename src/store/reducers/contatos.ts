@@ -1,20 +1,78 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Contato from '../../models/Contatos'
 
+type ContatosState = {
+  itens: Contato[]
+}
+
+const initialState: ContatosState = {
+  itens: [
+    {
+      id: 1,
+      nome: 'Luiz',
+      numero: 999817634,
+      email: 'luiz@contato.com'
+    },
+    {
+      id: 2,
+      nome: 'Rogério',
+      numero: 999817634,
+      email: 'rogerio@contato.com'
+    },
+    {
+      id: 3,
+      nome: 'Antonio',
+      numero: 999817634,
+      email: 'antonio@exemplo.com'
+    },
+    {
+      id: 4,
+      nome: 'Francisco',
+      numero: 999817634,
+      email: 'francisco@contato.com'
+    },
+    {
+      id: 5,
+      nome: 'Ana',
+      numero: 999817634,
+      email: 'ana@exemplo.com'
+    }
+  ]
+}
+
 const contatosSlice = createSlice({
   name: 'contatos',
-  initialState: [
-    new Contato('Kotzen', 9993652371, 'kotzen@guitar.com', 1),
-    new Contato('Luiz', 9993652371, 'luiz@guitar.com', 2),
-    new Contato('Chico', 9993652371, 'chico@guitar.com', 3),
-    new Contato('Francisco', 9993652371, 'francisco@guitar.com', 4)
-  ],
+  initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
-      state = state.filter((contato) => contato.id !== action.payload)
+      state.itens = state.itens.filter(
+        (contato) => contato.id !== action.payload
+      )
+    },
+    editar: (state, action: PayloadAction<Contato>) => {
+      const indexDoContato = state.itens.findIndex(
+        (c) => c.id === action.payload.id
+      )
+
+      if (indexDoContato >= 0) {
+        state.itens[indexDoContato] = action.payload
+      }
+    },
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const contatoExistente = state.itens.find(
+        (contato) =>
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+      )
+      if (contatoExistente) {
+        alert('Já existe um contato com esse nome')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover } = contatosSlice.actions
+// export const selectItensLista = (state: RootReducer) => state.contatos.itens
+
+export const { remover, editar, cadastrar } = contatosSlice.actions
 export default contatosSlice.reducer

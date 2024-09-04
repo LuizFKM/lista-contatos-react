@@ -18,18 +18,31 @@ export const Card = styled.div`
   }
 `
 
-export const TituloCard = styled.h3`
+export const TituloCard = styled.input`
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
   text-align: center;
   margin: 8px 0;
   font-size: 1.5em;
   color: #182c61;
 `
 
-export const ContentCard = styled.h4`
+export const EditandoTitulo = styled(TituloCard)`
+  border-bottom: solid 1px red;
+`
+
+export const ContentCard = styled.input`
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
   text-align: start;
   margin: 8px 0;
   font-size: 1.1em;
   color: #2c3a47;
+`
+export const EditandoContent = styled(ContentCard)`
+  border-bottom: solid 1px red;
 `
 
 export const Email = styled.a`
@@ -56,6 +69,13 @@ export const Email = styled.a`
     width: 100%;
     left: 0;
   }
+`
+export const EditandoEmail = styled.input`
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  border-bottom: solid 1px red;
+  padding-top: 4px auto;
 `
 
 export const GrupoBotoes = styled.div`

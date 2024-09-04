@@ -1,10 +1,23 @@
 import { useSelector } from 'react-redux'
 import ContatoCard from '../../components/CardContato'
 import { ListaContainer } from '../../styles'
-import { RootReducer } from '../../store'
+import {
+  selectItensLista,
+  selectNomeDoContato
+} from '../../store/reducers/selectors'
 
 const ListaDeContatos = () => {
-  const { contatos } = useSelector((state: RootReducer) => state)
+  const nomeDoContato = useSelector(selectNomeDoContato)
+  const itens = useSelector(selectItensLista)
+
+  const filtraContatos = () => {
+    return itens.filter(
+      (item: { nome: string }) =>
+        item.nome.toLowerCase().search(nomeDoContato.toLowerCase()) >= 0
+    )
+  }
+
+  const contatos = filtraContatos()
   return (
     <ListaContainer>
       {contatos.map((c) => (
